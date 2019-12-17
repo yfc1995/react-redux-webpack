@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Point from './pages/Point';
+import LookAtMatrix from './pages/LookAtMatrix/LooaAtMatrix';
+import Animate from './pages/Animate/Animate'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
@@ -8,8 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       asideList: [
-        { name: '二维图形', list: [{name:'点', path: '/point'}, {name:'线', path: '/line'}, {name:'三角形', path: '/triangle'}] },
-        { name: '三维图形', list: [{name:'平移', path: '/move'}, {name:'旋转', path: '/rotate'}, {name:'缩放', path: '/zoom'}] }
+        // { name: '二维图形', list: [{name:'点', path: '/point'}, {name:'线', path: '/line'}, {name:'三角形', path: '/triangle'}] },
+        { name: '三维图形', list: [{name:'视图矩阵', path: '/lookAtMatrix'}, {name:'正射投影矩阵', path: '/orthonormalProjectionMatrix'}, {name:'动画', path: '/animate'}] }
       ],
       chooseIndex: ''
     };
@@ -35,8 +37,7 @@ class App extends React.Component {
         <Link to={lis.path} key={lis.name}>
           <span
             data-name={lis.name}
-            onMouseOver={e => this.mouseoverList(index, lis.name, e)}
-            onClick={e => this.clickList(lis.name, e)}
+            onClick={e => this.mouseoverList(index,lis.name, e)}
             className={
               lis.name + index === this.state.chooseIndex ? 'listActive' : ''
             }
@@ -58,11 +59,13 @@ class App extends React.Component {
           <aside className="aside">
             <ul>{asideListName}</ul>
           </aside>
-          <div>
+          <div className="appChild">
             <Route path="/" exact render={()=>
               (<div>首页</div>)
             }/>
             <Route path="/point" component={Point}/>
+            <Route path="/lookAtMatrix" component={LookAtMatrix}/>
+            <Route path="/animate" component={Animate}/>
           </div>
         </Router>
       </div>

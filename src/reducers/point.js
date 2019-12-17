@@ -7,7 +7,7 @@ function PointR(state=pointStore, action) {
     case 'ADD':
       return {
         ...state,
-        num: state.num + 1
+        num: state.num += 1
       }
     default:
         return state;

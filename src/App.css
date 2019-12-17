@@ -22,3 +22,7 @@
 .aside .listActive {
   color: #ffffff;
 }
+.appChild {
+  flex: 1;
+  height: 100%;
+}
