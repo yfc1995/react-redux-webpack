@@ -9,6 +9,11 @@ function PointR(state=pointStore, action) {
         ...state,
         num: state.num += 1
       }
+    case 'ADDASYNC':
+      return {
+        ...state,
+        num: state.num += action.res
+      }
     default:
         return state;
   }

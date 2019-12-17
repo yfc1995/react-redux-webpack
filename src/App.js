@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       asideList: [
-        // { name: '二维图形', list: [{name:'点', path: '/point'}, {name:'线', path: '/line'}, {name:'三角形', path: '/triangle'}] },
+        { name: '二维图形', list: [{name:'点', path: '/point'}, {name:'线', path: '/line'}, {name:'三角形', path: '/triangle'}] },
         { name: '三维图形', list: [{name:'视图矩阵', path: '/lookAtMatrix'}, {name:'正射投影矩阵', path: '/orthonormalProjectionMatrix'}, {name:'动画', path: '/animate'}] }
       ],
       chooseIndex: ''

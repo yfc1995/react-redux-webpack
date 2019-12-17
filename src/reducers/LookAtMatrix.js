@@ -3,7 +3,6 @@ const LookAtMatrixState = {
 }
 
 export default function LookAtMatrixR(state = LookAtMatrixState, action) {
-  console.log(action)
   switch (action.type) {
     case 'CHANGEEYE':
       return {
