@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
+import SetVisualspace from '../../components/SetVisualspace';
 import LookAtTriangle from '../../drawJs/LookAtMatrixTriangle';
 import getGl from '../../drawJs/getWebGlContext';
 import './LookAtMatrix.css';
@@ -62,8 +61,8 @@ class LookAtMatrix extends Component {
     const param = this.props.params.lookat;
     param[index] = value;
     this.props.changey({
-      param,
-    })
+      param
+    });
     this.state.triangle.changeView(this.props.params.lookat);
   }
   render() {
@@ -71,113 +70,17 @@ class LookAtMatrix extends Component {
       <div className="lookAtMatrix">
         <canvas id="webgl" width="500" height="500"></canvas>
         <div className="sliderBox">
-          <Typography id="discrete-slider" gutterBottom>
-            视点x
-          </Typography>
-          <Slider
-            defaultValue={0.0}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.exChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            视点y
-          </Typography>
-          <Slider
-            defaultValue={0.0}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.eyChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            视点z
-          </Typography>
-          <Slider
-            defaultValue={0}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.ezChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            目标点x
-          </Typography>
-          <Slider
-            defaultValue={0.0}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.pxChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            目标点y
-          </Typography>
-          <Slider
-            defaultValue={0}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.pyChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            目标点z
-          </Typography>
-          <Slider
-            defaultValue={-1}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.pzChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            正方向x
-          </Typography>
-          <Slider
-            defaultValue={0.0}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.dxChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            正方向y
-          </Typography>
-          <Slider
-            defaultValue={1}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.dyChange}
-          />
-          <Typography id="discrete-slider" gutterBottom>
-            正方向z
-          </Typography>
-          <Slider
-            defaultValue={0.0}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            step={0.01}
-            min={-1}
-            max={1}
-            onChange={this.dzChange}
+          <SetVisualspace
+            name="hi"
+            exChange={this.exChange}
+            eyChange={this.eyChange}
+            ezChange={this.ezChange}
+            pxChange={this.exChange}
+            pyChange={this.exChange}
+            pzChange={this.exChange}
+            dxChange={this.exChange}
+            dyChange={this.exChange}
+            dzChange={this.exChange}
           />
         </div>
       </div>

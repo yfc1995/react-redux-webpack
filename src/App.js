@@ -1,17 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import Point from './pages/Point';
 import LookAtMatrix from './pages/LookAtMatrix/LooaAtMatrix';
 import Animate from './pages/Animate/Animate'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
+import OrthonormalProjectionMatrix from './pages/OrthonormalProjectionMatrix/OrthonormalProjectionMatrix'
+import LookAtOrth from './pages/LookAndOrth/index';
+import PerspectiveMatrix from './pages/PerspectiveMatrix4/index';
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       asideList: [
         { name: '二维图形', list: [{name:'点', path: '/point'}, {name:'线', path: '/line'}, {name:'三角形', path: '/triangle'}] },
-        { name: '三维图形', list: [{name:'视图矩阵', path: '/lookAtMatrix'}, {name:'正射投影矩阵', path: '/orthonormalProjectionMatrix'}, {name:'动画', path: '/animate'}] }
+        { name: '三维图形', list: [{name:'视图矩阵', path: '/lookAtMatrix'}, {name:'正射投影矩阵', path: '/orthonormalProjectionMatrix'},{name: '视图正射结合', path:'/lookAtOrth'}, {name: '透视投影矩阵', path:'/perspectiveMatrix'}, {name:'动画', path: '/animate'}] }
       ],
       chooseIndex: ''
     };
@@ -66,6 +68,9 @@ class App extends React.Component {
             <Route path="/point" component={Point}/>
             <Route path="/lookAtMatrix" component={LookAtMatrix}/>
             <Route path="/animate" component={Animate}/>
+            <Route path='/orthonormalProjectionMatrix' component={OrthonormalProjectionMatrix} />
+            <Route path='/lookAtOrth' component={LookAtOrth} />
+            <Route path='/perspectiveMatrix' component={PerspectiveMatrix} />
           </div>
         </Router>
       </div>

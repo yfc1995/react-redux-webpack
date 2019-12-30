@@ -1,0 +1,4 @@
+export const LOOKANDORTHACTION = {
+  changeEyeForLookAndOrth: 'CHANGEEYEFORLOOKANDORTH',
+  changeOrthForLookAndOrth: 'CHANGEORTHFORLOOKANDORTH'
+};
