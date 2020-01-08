@@ -3,7 +3,7 @@ import { addSyncSaga } from './point';
 import { opmSaga } from './OPM';
 import { watchChangeEye, watchChangeOpm } from './LookAndOrth';
 import { watchEyeForPerspective, watchPerspective } from './Perspective';
-
+import { watchChangeEyeForCube } from './Cube';
 export default function* appSaga() {
   yield fork(addSyncSaga);
   yield fork(opmSaga);
@@ -11,4 +11,5 @@ export default function* appSaga() {
   yield fork(watchChangeOpm);
   yield fork(watchEyeForPerspective);
   yield fork(watchPerspective);
+  yield fork(watchChangeEyeForCube);
 }

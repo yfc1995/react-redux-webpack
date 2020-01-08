@@ -5,6 +5,7 @@ import AnimateR from './Animate';
 import OPMRender from './OPM';
 import LookAndOrthR from './LookAndOrth';
 import perspectiveR from './PerspectiveMatrix';
+import CubeR from './Cube';
 
 const appReducer = combineReducers({
   point: PointR,
@@ -12,6 +13,7 @@ const appReducer = combineReducers({
   animatePentagram: AnimateR,
   opm: OPMRender,
   orth: LookAndOrthR,
-  perspective: perspectiveR
+  perspective: perspectiveR,
+  cube: CubeR
 });
 export default appReducer;

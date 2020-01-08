@@ -1,0 +1,15 @@
+.cube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cube .slide-box {
+  width: 200px;
+  display: block;
+}
+.cube .canvas-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

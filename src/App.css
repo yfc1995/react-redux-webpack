@@ -1,6 +1,12 @@
+@import '~antd/dist/antd.css';
 .App {
   display: flex;
   height: 100vh;
+}
+.header {
+  color: white;
+  font-size: 32px;
+  padding-left: 40px;
 }
 .aside {
   width: 200px;

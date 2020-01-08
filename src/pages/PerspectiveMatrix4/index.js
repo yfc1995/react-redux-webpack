@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import './index.css';
 import getGl from '../../drawJs/getWebGlContext';
 import SerPerspective from '../../components/setPerspective';
-import SetVisualspace from '../../components/SetVisualspace';
-import PerspectiveMatrixDraw from '../../drawJs/PerspectiveMatrixDraw';
+import SetLookAtBig from '../../components/SetLookAtBig';
+// import PerspectiveMatrixDraw from '../../drawJs/PerspectiveMatrixDraw';
+import PerspectiveMatrixDraw2 from '../../drawJs/PerspectiveMatrixDraw2';
 class PerspectiveMatrix extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,8 @@ class PerspectiveMatrix extends Component {
     }
   }
   componentDidMount() {
-    const figure = new PerspectiveMatrixDraw(getGl('webgl'));
+    // const figure = new PerspectiveMatrixDraw(getGl('webgl'));
+    const figure = new PerspectiveMatrixDraw2(getGl('webgl'));
     this.setState({
       graphics: figure
     })
@@ -80,7 +82,7 @@ class PerspectiveMatrix extends Component {
   setPerspective(index, value) {
     const perspective = this.props.per.perspective;
     perspective[index] = value;
-    this.props.changeEye(perspective);
+    this.props.changePerspective(perspective);
     this.state.graphics.setPer(this.props.per.perspective);
   }
   render() {
@@ -96,7 +98,7 @@ class PerspectiveMatrix extends Component {
         </div>
         <canvas id="webgl" width="500" height="500"></canvas>
         <div>
-          <SetVisualspace
+          <SetLookAtBig
             name="hi"
             exChange={this.exChange}
             eyChange={this.eyChange}

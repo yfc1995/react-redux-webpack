@@ -121,7 +121,6 @@ class AnimatePentagram {
   }
   changeSpeed(s) {
     this.speed = s;
-    console.log(s)
     this.tick();
   }
   direction(d) {
